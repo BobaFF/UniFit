@@ -1,0 +1,2 @@
+ErrorDocument 404 /ffurno/UniFit/error404.php
+ErrorDocument 500 /ffurno/UniFit/error500.php
