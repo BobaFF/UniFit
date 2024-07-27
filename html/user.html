@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <title>Area riservata - UniFit</title>
+        <meta name="keywords" content="UniFit, palestra, area riservata, schede di allenamento, dati personali ">
+        <meta name="description" content="Scopri i tuoi piani di allenamento e gestisci i tuoi dati personali.">
+        <meta name="author" content="Manuel Cinnirella, Francesco Furno, Davide Seresin">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="img/icon.ico">
+        <link rel="stylesheet" href="css/style-min.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+        <script defer src="js/script-min.js"></script>
+    </head>
+    <body>
+        <nav aria-label="Aiuti alla navgiazione">
+            <a class="navigationhelp" href="#content" tabindex="0">Vai al contenuto</a>
+        </nav>
+        <header>
+            <h1 id="logo">UniFit</h1>
+            <button id="apriMenu">Menu</button>
+            <nav id="menu" class="nascosto" aria-label="Menù di navigazione">
+                <ul>
+                    <li><a href="index.php"><span lang="en">Home</span></a></li>
+                    <li><a href="centro.php">Il centro</a></li>
+                    <li><a href="attivita.php">Attività</a></li>
+                    <li class="current">Area riservata</li>
+                    <li><a href="logout.php" lang="en">Logout</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <nav id="breadcrumb" aria-label="Percorso di navigazione">
+            <p>Ti trovi in: <a href="index.php"><span lang="en">Home</span></a> &gt;&gt; Area riservata</p>
+        </nav>
+        <main id="content"  class="AR">
+            <nav id = "menuAR" class="user" aria-label="Menù area riservata">
+                <ul>
+                    <li><button id="schedeLink">Visualizza schede</button></li>
+                    <li><button id="datiLink">I tuoi dati</button></li>
+                </ul>
+            </nav>
+            <!--{avvisoUser}-->
+            <section id="schedeWin" class="active">
+                <h2>Schede di allenamento</h2>
+                <p class="descrMenu">Qui puoi visualizzare le tue schede di allenamento e modificare le note relative agli esercizi.</p>
+                <h3>Schede in corso di validità</h3>
+                {schedeValide}
+                <h3>Schede scadute</h3>
+                {schedeScadute}
+            </section>
+            <section id="datiWin" class ="active">
+                <h2>I tuoi dati</h2>
+                <p class="descrMenu">Qui puoi visualizzare i tuoi dati personali e modificare l'indirizzo <span lang="en">email</span>.</p>
+                <!--{avvisoMail}-->
+                <dl id="infoUser">
+                    <dt>Cognome:</dt>
+                    <dd>{cognomeAtleta}</dd>
+                    <dt>Nome:</dt>
+                    <dd>{nomeAtleta}</dd>
+                    <dt lang="en">Username:</dt>
+                    <dd>{usernameAtleta}</dd>
+                </dl>
+                <form method = "post" action="user.php" id="formModificaEmail">	
+                    <fieldset>
+                        <legend>Modifica il tuo indirizzo <span lang="en">email</span></legend>
+                        <label for="oldEmail"><span lang="en">Email</span> corrente</label>
+                        <input name="oldEmail" id="oldEmail" type="email" required readonly value="{emailAtleta}">		
+                        <label for="newEmail">Nuova <span lang="en">email</span> </label>
+                        <input name="newEmail" id="newEmail" type="email" required>	
+                    </fieldset>
+                    <input type="submit" name="modificaMail" id="modificaMail" value="Modifica indirizzo email">
+                </form>
+            </section>
+            <a id = "back-to-top" href = "#">Torna al contenuto</a>
+        </main>
+        {footer}
+    </body>
+</html>

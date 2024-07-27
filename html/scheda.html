@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <title>Scheda di allenamento - UniFit</title>
+        <meta name="keywords" content="UniFit, palestra, area riservata, schede di allenamento, esercizi">
+        <meta name="description" content="Visualizza la tua scheda di allenamento e controlla gli esercizi!">
+        <meta name="author" content="Manuel Cinnirella, Francesco Furno, Davide Seresin">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="img/icon.ico">
+        <link rel="stylesheet" href="css/style-min.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+        <script defer src="js/script-min.js"></script>
+    </head>
+    <body>
+        <nav aria-label="Aiuti alla navgiazione">
+            <a class="navigationhelp" href="#content" tabindex="0">Vai al contenuto</a>
+        </nav>
+        <header>
+            <h1 id="logo">UniFit</h1>
+            <button id="apriMenu">Menu</button>
+        <!--menu-->
+        <nav id="menu" class="nascosto"  aria-label="Menù di navigazione">
+            <ul>
+                <li><a href="index.php"><span lang="en">Home</span></a></li>
+                <li><a href="centro.php">Il centro</a></li>
+                <li><a href="attivita.php">Attività</a></li>
+                <li><a href="user.php">Area riservata</a></li>
+                <li><a href="logout.php">Logout</a></li>
+            </ul>
+        </nav>
+        </header>
+        
+        <!--breadcrumb-->
+        <nav id="breadcrumb"  aria-label="Percorso di navigazione">
+            <p>Ti trovi in: Ti trovi in: <a href="index.php"><span lang="en">Home</span></a> &gt;&gt; <a href = "user.php">Area riservata</a> &gt;&gt; Scheda n.{idScheda}</p>
+        </nav>
+
+        <main id="content"  class="AR">
+            <nav id ="menuScheda" class="user" aria-label="Menù di gestione scheda">
+                <ul>
+                    <li><a href="user.php#">Torna indietro</a></li>
+                    <li><button id="schedaBtn">Visualizza scheda</button></li>
+                    <li><button id="modificaBtn">Modifica note</button></li>
+                    <!--<button id="stampaBtn">Stampa la scheda</button>-->
+                </ul>
+            </nav>
+            <section id="schedaWin" class="active">
+                <h2>Visualizza scheda</h2>
+                <!--{messaggioModifica}-->
+                <!--<a href="/modifica_scheda_user.php?source={source}&ids={id scheda}">Modifica note</a>-->
+                <table aria-describedby="descr" id = "scheda">
+                    <caption>Scheda di allenamento realizzata da {nome istruttore} valida dal 
+                        <time datetime="{inizio}">{inizio}</time> al 
+                        <time datetime="{fine}">{fine}</time>
+                    </caption>
+                    <thead>
+                        <tr>
+                            <th scope = "col">Numero</th>
+                            <th scope = "col">Esercizio</th>
+                            <th scope = "col">Immagine</th>
+                            <th scope = "col">Ripetizioni</th>
+                            <th scope = "col">Recupero</th>
+                            <th scope = "col">Note</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {scheda}
+                    </tbody>
+                </table>
+                <p id="descr">la tabella contiene l'elenco degli esercizi della scheda di allenamento selezionata.
+                    Ogni riga descrive un esercizio con nome, immagine, ripetizioni, recupero e note.
+                </p>
+            </section>
+            <section id ="modificaWin" class="active">
+                <h2>Modifica scheda</h2>
+                <p class="descrMenu">Puoi modificare le note relative ad ogni esercizio.</p>
+                {form}
+            </section>
+            <a id = "back-to-top" href = "#">Torna al contenuto</a>
+        </main>
+         {footer}
+    </body>
+</html>

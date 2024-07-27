@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="it">
+    <!--head-->
+    <head>
+        <meta charset="UTF-8">
+        <title>UniFit</title>
+        <meta name="keywords" content="UniFit, palestra, sala fitness, centro sportivo, Torre di Archimede, Padova, Studenti universitari, Università">
+        <meta name="description" content="Homepage del sito ufficiale di UniFit, palestra per universitari situata a Padova all'ultimo piano della torre di Archimede.">
+        <meta name="author" content="Manuel Cinnirella, Francesco Furno, Davide Seresin">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="img/icon.ico">
+        <link rel="stylesheet" href="css/style-min.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+        <script defer src="js/script-min.js"></script> 
+    </head>
+    <body>
+        <nav aria-label="Aiuti alla navgiazione">
+            <a class="navigationhelp" href="#content" tabindex="0">Vai al contenuto</a>
+        </nav>
+        <header>
+            <h1 id="logo">UniFit</h1>
+            <button id="apriMenu">Menu</button>
+            <!--menu-->
+            <nav id="menu" class="nascosto" aria-label="Menù di navigazione">
+                <ul>
+                    <li class="current" lang="en">Home</li>
+                    <li><a href="centro.php">Il centro</a></li>
+                    <li><a href="attivita.php">Attività</a></li>
+                    <li><a href="login.php">Area riservata</a></li>
+                    <!--logout-->
+                </ul>
+            </nav>
+        </header>
+        
+        <!--breadcrumb-->
+        <nav id="breadcrumb" aria-label="Percorso di navigazione">
+            <p>Ti trovi in: <span lang="en">Home</span></p>
+        </nav>
+        <main id="content">
+            <h2>Benvenuto su UniFit</h2>
+            <h3>Scopri il nostro centro!</h3>
+        <p>UniFit è il centro situato all'ultimo piano della Torre di Archimede a Padova, nel cuore della
+            zona universitaria. La sua struttura accogliente offre una vasta gamma di servizi per il <span lang="en">fitness</span>,
+            tra cui una sala dotata di attrezzature all'avanguardia e sessioni di allenamento dedicate a
+            pratiche come il <span lang="en">calisthenics</span>, il <span lang="en">pilates</span> e lo yoga.
+            <a class="linkImg" href="centro.php" aria-label="Vai alla pagina del centro">
+                <picture>
+                    <source srcset="img/TorreEsterno.webp" type="image/webp">
+                    <img class="imgHomePage" src="img/TorreEsterno.png" alt="Torre di Archimede dall'esterno con scritta Scopri il centro">
+                </picture>
+            </a>
+        </p>
+        <p>Il centro vuole essere un punto di riferimento per tutti gli studenti che vogliono dedicare un po' di tempo alla cura del proprio fisico.</p>
+        
+        <h3>Scopri la nostra area riservata!</h3>
+        <p>I nostri clienti hanno la possibilità di visualizzare i propri piani di allenamento all'interno della nostra area riservata dedicata!
+            Se hai completato il primo allenamento e non hai ancora un <span lang="en">account</span> puoi procedere con la registrazione. Cosa aspetti? 
+            <a class="linkImg" href="signup.php" aria-label="Vai alla pagina di registrazione">
+                <picture>
+                    <source srcset="img/palestraSignup.webp" type="image/webp">    
+                    <img class="imgHomePage" src="img/palestraSignup.webp" alt="Interno della sala fitness Unifit con scritta Registrati ora.">
+                </picture>
+            </a>
+        </p>
+        <p>Sei già iscritto? <a href="login.php" title="Vai alla pagina di login">Accedi al tuo <span lang="en">account</span>!</a></p>
+        <h3>Orari di apertura del centro</h3>
+        <!-- Orari centro -->
+        <table aria-describedby="descrA" id="orario">
+            <caption>Orari del centro</caption>
+            <thead>
+                <tr>
+                    <th scope="col">Giorno</th>
+                    <th scope="col">Apertura</th>
+                    <th scope="col">Chiusura</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th abbr="Lun" scope ="row">Lunedì</th>
+                    <td data-title="Apertura"><time datetime="06:30">6:30</time></td>
+                    <td data-title="Chiusura"><time datetime="22:30">22:30</time></td>
+                </tr>
+                <tr>
+                    <th abbr="Mar" scope ="row">Martedì</th>
+                    <td data-title="Apertura"><time datetime="06:30">6:30</time></td>
+                    <td data-title="Chiusura"><time datetime="22:30">22:30</time></td>
+                </tr>
+                <tr>
+                    <th abbr="Mer" scope ="row">Mercoledì</th>
+                    <td data-title="Apertura"><time datetime="06:30">6:30</time></td>
+                    <td data-title="Chiusura"><time datetime="22:30">22:30</time></td>
+                </tr>
+                <tr>
+                    <th abbr="Gio" scope ="row">Giovedì</th>
+                    <td data-title="Apertura"><time datetime="06:30">6:30</time></td>
+                    <td data-title="Chiusura"><time datetime="22:30">22:30</time></td>
+                </tr>
+                <tr>
+                    <th abbr="Ven" scope ="row">Venerdì</th>
+                    <td data-title="Apertura"><time datetime="06:30">6:30</time></td>
+                    <td data-title="Chiusura"><time datetime="22:30">22:30</time></td>
+                </tr>
+                <tr>
+                    <th abbr="Sab" scope ="row">Sabato</th>
+                    <td data-title="Apertura"><time datetime="08:00">8:00</time></td>
+                    <td data-title="Chiusura"><time datetime="20:00">20:00</time></td>
+                </tr>
+                    <tr>
+                    <th abbr="Dom" scope ="row">Domenica</th>
+                    <td data-title="Apertura"><time datetime="09:00">9:00</time></td>
+                    <td data-title="Chiusura"><time datetime="17:00">17:00</time></td>
+                </tr>
+            </tbody>
+        </table>
+        <p id = "descrA">La tabella riporta gli orari del centro UniFit. Per ogni riga è presente il giorno della settimana, l'orario di apertura e di chiusura della struttura.</p>
+        <a id = "back-to-top" href = "#">Torna al contenuto</a>
+        </main>
+        {footer}
+    </body>
+</html>

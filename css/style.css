@@ -1,0 +1,1011 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* VARIABILI */
+:root{
+    --FontBodyFamily: "Roboto", "sans-serif";
+    --HeaderBgColor: #F4BEBE;
+    --MenuCurrentBgColor: white;
+    --MenuCurrentColor: #691616;
+    --BreadcrumbBgColor: white; 
+    --BreadcrumbTxtColor: black;
+    --orarioBgColor1: #EBEAEA;
+    --orarioBgColor2: white;
+    --listaPersonaleBgColor: white;
+    --personaleBgColor: #EBEAEA;
+    --tableHeaderTextColor: white;
+    --tableBgHeaderColor: black;
+    --TxtColor: black;
+    --h2FontSize: 2em;
+    --h3FontSize: 1.5em;
+    --FooterBgColor: black;
+    --FooterTxtColor: white;
+    --FooterLinkColor: #8A8AFF;
+    --LinkColor: #0000B8;
+    --VisitedLinkColor: #691616;
+    --SchedaBgColor: #EBEAEA;
+    --tornaSuBtnColor: #F4BEBE;
+    --LegendBgColor: #F4BEBE;
+    --FormBgColor: #EBEAEA;
+    --SubmitBgColor: #BAE9BA;
+    --SubmitTextColor: black;
+    --ARActiveButtonBgColor: white;
+    --ARButtonBgColor:#F4BEBE;
+    --ListaSchedeBgColor: #F4BEBE;
+    --MessaggioARSucessoBgColor: #5AFF57;
+    --MessaggioARErroreBgColor: #FF7575;
+    --MessaggioFormErroreTextColor: black;
+    --MessaggioFormErroreBgColor: #FF7575;
+    --MenuArTextColor: black;
+    --ErrorLinkBg: #F4BEBE;
+    --infoUserBgColor: white;
+
+}
+
+html {
+    font-size: 100%;
+    font-family: var(--FontBodyFamily);
+    line-height: 1.5em;
+    margin: auto;
+    background-image: url(../img/bg.png);
+    width: auto;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;  /*da aggiornare per flex*/
+}
+
+.navigationhelp{
+    position: absolute;
+    text-indent: -999em;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+}
+.navigationhelp:focus {
+    top: 0px;
+    left: 0px;
+    text-indent: 0em;
+    width: auto;
+    height: auto;
+    background-color: var(--HeaderBgColor);
+   }
+
+
+/*HEADER*/
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: var(--HeaderBgColor);
+    border-bottom: 1px solid black;
+}
+
+header #logo {
+    text-indent: -999em;
+    background-image: url("../img/navigazione/Logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left;
+    margin-left: 10px;
+    width: 25%;
+    height: 55px;
+}
+
+.nascosto {
+    display: none;
+}
+
+#apriMenu {
+    align-self: center;
+    text-align: right;
+    background-color: var(--HeaderBgColor);
+    margin-right: 10px;
+    height: 40px;
+    font-size: 0px;
+    width: 40px;
+    border: none;
+    background-image: url("../img/navigazione/menu.png");
+    background-size: cover;
+}
+
+#menu {
+    width: 100%;
+    border-top: 1px solid black;  
+}
+#menu li {
+    padding: 1em;
+    margin: auto;
+}
+#menu li.current {
+    background-color: var(--MenuCurrentBgColor);
+    color: var(--MenuCurrentColor);
+    font-weight: bold;
+}
+
+#menu ul {
+    list-style: none;
+    text-align: center;
+}
+
+a {
+    color: var(--LinkColor)
+}
+a:visited {
+    color: var(--VisitedLinkColor)
+}
+/* BREADCRUMB */
+#breadcrumb {
+    padding: 0.2em;
+    display: none;
+    background-color: var(--BreadcrumbBgColor);
+    border-bottom: 1px solid black;
+}
+
+#breadcrumb p {
+    margin: auto;
+    text-align: left; 
+    padding-top: 0;
+    color: var(--BreadcrumbTxtColor);
+    text-indent: 2em;
+}
+/*HOMEPAGE*/
+img.imgHomePage{
+    max-width: 90%;
+    border-radius: 40px;
+    border: 1px solid black;
+    display: block;
+    margin: auto;
+    margin-top: 1em;
+}
+/*Orario*/
+#descrA {
+    display: none;
+}
+#orario caption {
+    padding: 0.5em;
+    margin-bottom: 0.5em;
+    border-radius: 50px;
+    display: none;
+}
+#orario, #orario tr{
+    border: solid 1.5px black;
+    border-collapse: collapse;
+    text-align: center;
+}
+#orario tr:nth-child(odd) {
+    background-color: var(--orarioBgColor2);
+}
+#orario {
+    margin: auto;
+    margin-top: 1em;
+    width: 90%;
+    margin-bottom: 1em;
+    max-width: 600px;
+    background-color: var(--orarioBgColor1);
+}
+#orario tr, #orario td {
+    width: 33%;
+}
+
+#orario thead tr th {
+    font-weight: bold;
+    background-color: var(--tableBgHeaderColor);
+    color: var(--tableHeaderTextColor);
+}
+
+/*MAIN*/
+main {
+    color: var(--TxtColor);
+    margin: auto;
+    margin-top: 0;
+    width: 90%;
+    padding-bottom: 1em;
+}
+
+h2 {
+    text-transform: uppercase;
+    font-size: var(--h2FontSize);
+    line-height: normal;
+    text-align: center;
+    padding-top: 0.5em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+}
+h3 {
+    text-transform: uppercase;
+    padding-top: 1em;
+    text-align: center;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    font-size: var(--h3FontSize);
+}
+
+p {
+    text-align: center;
+    padding-top: 1em;
+}
+main p {
+    max-width: 1024px;
+    margin: auto;
+}
+    /*-Torna Su*/
+#back-to-top {
+    background-color:var(--tornaSuBtnColor);
+    display: block;
+    position: fixed;
+    background-image: url(../img/navigazione/torna.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80%;
+    text-indent: -999em;
+    padding: 1.5em;
+    bottom: 15%;
+    right: 3%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    border: 2px solid black;
+    z-index: 999;
+}
+
+#to-creaSchedaBtn {
+    background-color:var(--SubmitBgColor);
+    display: block;
+    position: fixed;
+    background-image: url(../img/navigazione/torna.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80%;
+    text-indent: -999em;
+    padding: 1.5em;
+    bottom: 30%;
+    right: 3%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    border: 2px solid black;
+    z-index: 999;
+    rotate: 180deg;
+}
+/*IL CENTRO*/
+.imgCentro {
+    max-width: 90%;
+    margin: 0.5em auto 0.5em auto;
+    display: block;
+    border: 1px solid black;
+    border-radius: 30px;
+}
+ul#listaPersonale{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+}
+ul#listaPersonale li {
+background-color: var(--listaPersonaleBgColor);
+border: 2px solid black;
+margin: 1em auto 1em auto;
+width: 80%;
+}
+ul#listaPersonale li img {
+    width: 100%;
+    border-radius: 100%;
+}
+ul#listaPersonale li .nomeIstruttore {
+font-weight: bold;
+font-size: 1.5em;
+margin-bottom: 0.5em;
+background-color: var(--ARButtonBgColor);
+padding-top: 0.5em;
+padding-bottom: 0.5em;
+text-align: center;
+text-transform: uppercase;
+border-bottom: 2px solid black;
+}
+ul#listaPersonale li .ruoloIstruttore{
+font-weight: bold;
+font-size: 1.2em;
+display: block;
+background-color: var(--personaleBgColor);
+margin-top: 0em;
+padding-top: 0.5em;
+padding-bottom: 0.5em;
+border-top: 1px solid black;
+border-bottom: 1px solid black; 
+}
+ul#listaPersonale li .descIstruttore{
+    padding-top: 0.5em;
+}
+/*ATTIVITA*/
+.menuAttività {
+    list-style-type: none;
+    max-width: 1024px;
+    margin: auto;
+    text-align: center;
+    padding: 1em;
+}
+.menuAttività li {
+    display: inline-block;
+    width: 20%;
+    margin: 0em;
+    border: 1px solid black;
+}
+
+.menuAttività li a {
+    display: block;
+    padding: 1em;
+}
+
+.attività {
+    margin: auto;
+    max-width: 1024px;
+    padding-top: 1em;
+    padding-bottom: 2em;
+}
+
+.attività > dt {
+    border: 1px solid black;
+    padding: 0.5em;
+    font-size: 1.3em;
+    text-align: center;
+    background-color: var(--tableBgHeaderColor);
+    font-weight: bold;
+    color: var(--tableHeaderTextColor);
+}
+
+.attività > dd {
+    border: 1px solid black;
+    border-top: none;
+    padding-right: 1em;
+    padding-left: 1em;
+    text-align: justify;
+    margin-bottom: 1em;
+    background-color: var(--SchedaBgColor);
+}
+
+.attivitàInfo {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    display: grid;
+    grid-template-columns: 0.2fr 1fr;
+}
+
+.attivitàInfo dt {
+    font-weight: bold;
+    padding-right: 1em;
+    text-indent: 1.5em;
+}
+
+.attività > dd img {
+    width: 90%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 0.5em;
+    margin-bottom: 1em;
+    border-radius: 50px;
+}
+
+/*AREA RISERVATA*/
+main.AR {
+    margin: 0;
+    width: 100%;
+}
+main.AR section {
+    margin-bottom: 80px;
+}
+section {
+    display: none;
+}
+
+section.active  {
+    display: block;
+    width: 95%;
+    margin: auto;
+}
+.messaggioAR {
+    text-align: center;
+    border-radius: 30px;
+    max-width: 768px;
+    top: 10%;
+    margin: 0.5em auto 0 auto;
+    color: var(--MessaggioARColor);
+    padding: 0.5em;
+}
+.messaggioAR.nascosto {
+    display: none;
+}
+
+.messaggioAR.successo {
+    background-color: var(--MessaggioARSucessoBgColor);
+}
+
+.messaggioAR.errore {
+    background-color: var(--MessaggioARErroreBgColor);
+}
+.descrMenu {
+    margin: auto;
+    text-align: center;
+}
+dl#infoUser {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 90%;
+    margin: auto;
+    margin-top: 1em;
+    text-align: center;
+}
+dl#infoUser dt {
+    font-weight: bold;
+    text-align: center;
+}
+dl#infoUser dd {
+    background-color: var(--infoUserBgColor);
+    border: 1px solid black;
+    border-radius: 30px;
+    margin-bottom: 0.5em;
+    width: 60%;
+}
+ul.listaSchede {
+    list-style: none;
+    padding-top: 0.5em;
+    margin: auto;
+    text-align: center;
+    max-width: 748px;
+}
+ul.listaSchede li {
+    padding: 0.2em;
+}
+ul.listaSchede li a {
+    border-radius: 30px;
+    border: solid 1px black;
+    display: block;
+    padding: 0.5em;
+    background-color: var(--ListaSchedeBgColor);
+}
+p.listaSchede {
+    text-align: center;
+    padding-top: 0.5em;
+}
+/*-Scheda di allenamento*/
+#descr {
+    display: none;
+}
+#scheda caption {
+    padding: 0.5em;
+    margin-bottom: 0.5em;
+}
+#scheda thead {
+    display: none;
+}
+#scheda, #scheda td, #scheda th{
+    border: solid 1.5px black;
+    border-collapse: collapse;
+    text-align: center;
+    background-color: var(--SchedaBgColor);
+}
+#scheda td[data-title] {
+    padding: 0.5em;
+}
+#scheda {
+    margin: auto;
+    margin-top: 1em;
+}
+
+#scheda tr, #scheda th, #scheda td {
+    display: block;
+}
+
+#scheda tr th[scope="row"], #scheda tr td:first-of-type {
+    font-weight: bold;
+    background-color: var( --tableBgHeaderColor);
+    color:  var(--tableHeaderTextColor);
+}
+
+#scheda tr td[data-title]::before {
+    content: attr(data-title)":\00A0";
+    font-weight: bold;
+}
+#scheda img {
+    width: 100%;
+}
+/*-Form*/
+#IndicazioniForm {
+    text-align: center;
+    list-style: none;
+}
+#IndicazioniForm li {
+    padding: 0.2em;
+}
+#IndicazioniForm .campoIndicazioniForm {
+    font-weight: bold;
+}
+
+legend {
+    font-weight: bold;
+    background-color: var(--LegendBgColor);
+    border-radius: 30px;
+    padding: 0.3em 1em 0.3em 1em;
+    border: 1px solid black;
+    text-wrap: nowrap;
+    margin: auto;
+}
+fieldset {
+    display: grid;
+    margin: 1em auto 1em auto;
+    border-radius: 30px;
+    background-color: var(--FormBgColor);
+    border: solid black 1px;
+    max-width: 1024px;
+}
+
+label {
+    text-align: center;
+    padding-top: 0.5em;
+}
+
+textarea {
+    padding: 0.5em;
+    text-align: justify;
+    height: 140px;
+    width: 91%;
+    margin: auto;
+    margin-bottom: 0.5em;
+    font-size: 1em;
+    font-family: var(--FontBodyFamily);
+    border-radius: 10px;
+    border: solid black 1px;
+}
+
+textarea:disabled {
+    cursor: not-allowed;
+}
+input, select {
+    padding: 0.5em;
+    border-radius: 30px;
+    margin: 0 auto 0.5em auto;
+    width: 90%;
+    text-align: center;
+    font-size: 1em;
+    border: 1px solid black;
+}
+
+input[type="submit"] {
+    width: 95%;
+    height: 50px;
+    font-size: 1.1em;
+    margin: auto;
+    display: block;
+    border-radius: 30px;
+    border: solid black 2px;
+    background-color: var(--SubmitBgColor);
+    margin-bottom: 0.5em;
+    max-width: 1024px;
+    font-weight: bold;
+    color: var(--SubmitTextColor);
+}
+
+
+input[type="email"] {
+    width:90%;
+    margin: auto;
+    margin-bottom: 0.5em;
+    text-align: center;
+}
+input#eliminaScheda {
+    margin-top: 0.5em;
+}
+
+span.errorForm {
+    background-color: var(--MessaggioFormErroreBgColor);
+    color: var(--MessaggioFormErroreTextColor);
+    text-align: center;
+    margin: auto auto 0.5em auto;
+    border-radius: 30px;
+    width: 90%;
+}
+
+
+/*-Menu scheda*/
+#indietroAR {
+    padding-bottom: 1em;
+  }
+  #indietroAR a {
+    display: block;
+    width: 45%;
+    padding: 0.5em;
+    border-radius: 30px;
+    border: 1px solid black;
+    margin: 1% 1%;
+    background-color: var(--ARButtonBgColor);
+    text-align: center;
+    background-image: url("../img/navigazione/indietro.png");
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: contain;
+    text-indent: 1em;
+}
+
+#menuScheda, #menuAR {
+    width: 100%;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    z-index: 999;
+}
+#menuScheda.user ul, #menuAR.admin ul {
+    grid-template-columns: repeat(3, 1fr);
+}
+#menuAR ul {
+    grid-template-columns: repeat(2, 1fr);
+}
+#menuScheda.admin ul {
+    grid-template-columns: repeat(6, 1fr);
+}
+#menuScheda ul, #menuAR ul {
+    display: grid;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    border-top: 1px solid black;
+}
+
+#menuScheda ul li, #menuAR ul li {
+    height: 80px;
+    border: 1px solid black;
+}
+
+#menuScheda ul li button, #menuScheda ul li a, #menuAR ul li button, #menuAR ul li a{
+    display: block;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50px;
+    width: 100%;
+    height: 100%;
+    text-indent: -999em;
+    margin: auto;
+    border:none;
+    background-color: var(--ARButtonBgColor);
+    color: var(--MenuArTextColor);
+}
+
+#menuAR.user ul li:nth-child(1) button, #menuAR.admin ul li:nth-child(2) button {
+    background-image: url("../img/navigazione/lista-schede.png");
+}
+#menuAR.user ul li:nth-child(2) button {
+    background-image: url("../img/navigazione/user.png");
+}
+#menuAR.admin ul li:nth-child(1) button {
+    background-image: url("../img/navigazione/aggiungi-esercizio.png");
+}
+#menuAR.admin ul li:nth-child(3) button {
+    background-image: url("../img/navigazione/elimina-utente.png");
+}
+
+#menuScheda ul li button.active, #menuAR ul li button.active{
+    background-color: var(--ARActiveButtonBgColor);
+}
+
+#menuScheda.user ul li a {
+    background-image: url("../img/navigazione/indietro.png");
+}
+
+#menuScheda.user ul li:nth-child(2) button, #menuScheda.admin ul li:nth-child(1) button {
+    background-image: url("../img/navigazione/guarda-scheda.png");
+}
+
+#menuScheda.user ul li:nth-child(3) button, #menuScheda.admin ul li:nth-child(3) button {
+    background-image: url("../img/navigazione/modifica-semplice.png");
+}
+
+#menuScheda.admin ul li:nth-child(2) button {
+    background-image: url("../img/navigazione/modifica-periodo.png");
+}
+#menuScheda.admin ul li:nth-child(4) button {
+    background-image: url("../img/navigazione/aggiungi-esercizio.png");
+}
+#menuScheda.admin ul li:nth-child(5) button {
+    background-image: url("../img/navigazione/rimuovi-esercizio.png");
+}
+#menuScheda.admin ul li:nth-child(6) button {
+    background-image: url("../img/navigazione/elimina-scheda.png");
+}
+
+/*FOOTER*/
+footer {
+    background-color: var(--FooterBgColor);
+    color: var(--FooterTxtColor);
+    padding: 1.0em;
+    text-align: center;
+    margin-top: auto;
+    border-top: 2px solid black;
+}
+
+footer a {
+    color: var(--FooterLinkColor);
+}
+
+footer a:visited{
+    color: var(--FooterLinkColor);
+}
+
+footer div {
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+}
+
+footer div ul {
+    list-style: none;
+}
+
+footer h3 {
+    text-transform: uppercase;
+}
+
+#social li{
+    display: inline-block;
+    padding: 0.2em;
+}
+
+#social li a {
+    display: block;
+    width: 60px;
+    height: 60px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    text-indent: -9999px;
+    filter: invert(1);
+}
+#social li a:focus {
+    background-position: left;
+    width: 150px;
+    text-align: right;
+}
+
+#instagram  {
+    background-image: url(../img/instagram.svg);
+}
+#facebook {
+    background-image: url(../img/facebook.svg);
+}
+
+main.AR ~ footer p#rights{
+    margin-bottom: 80px;
+}
+
+/*PAGINE DI ERRORE*/
+#errorListOption{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    width: 100%;
+    text-align: center;
+    max-width: 1024px;
+    margin:auto;
+}
+#errorListOption li {
+    width: 70%;
+    margin: 1em 2em 1em 2em;
+    align-self: center;
+}
+#errorListOption li a{
+    display: block;
+    text-indent: -999em;
+    background-size: cover;
+    background-repeat: no-repeat;
+    aspect-ratio: 1 / 1;
+    background-color: var(--ErrorLinkBg);
+    border-radius: 30px;
+}
+#errorListOption li:nth-child(1) a {
+    background-image: url(../img/navigazione/errorHome.png);
+}
+#errorListOption li:nth-child(2) a {
+    background-image: url(../img/navigazione/errorAR.png);
+}
+
+
+@media only screen and (min-width: 600px) {
+    /*BREADCRUMB*/
+    #breadcrumb {
+        display: inline-block;
+    }
+    /*MAIN*/
+    #back-to-top {
+        bottom: 10%;
+    }
+    /*AREA RISERVATA*/
+    /*-Scheda di allenamento*/
+    #scheda thead {
+        display: table-row-group;
+    }
+    #scheda tr {
+        display: table-row;
+    }
+    #scheda thead th {
+        font-weight: bold;
+        background-color: var(--tableBgHeaderColor);
+        color: var(--tableHeaderTextColor);
+    }
+    #scheda th, #scheda td {
+        display: table-cell;
+    }
+
+    #scheda tr th[scope="row"], #scheda tr td:first-of-type {
+        font-weight: bold;
+        background-color: inherit;
+        color: inherit;
+    }
+
+    #scheda tr th:first-of-type {
+        width: 5%;
+    }
+    
+    #scheda td, #scheda th {
+        width: 16%;
+    }
+    
+    #scheda tr td:nth-child(3) {
+        width: 20%;
+    }
+    
+    #scheda tr td:last-of-type {
+        width:25%;
+    }
+
+    #scheda tr td[data-title]:before {
+        content: none;
+        font-weight: bold;
+    }
+    #menuScheda ul li button.active, #menuAR ul li button.active {
+        cursor:default;
+    }
+    #menuScheda ul li button, #menuAR ul li button {
+        cursor: pointer;
+    }
+    /*FORM*/
+    legend {
+        margin-left: 1em;
+    }
+    label {
+        text-align: left;
+        margin-left: 5%;
+    }
+    select, input, input[type="email"] {
+        text-align: left;
+    }
+    input[type="submit"] {
+        text-align: center;
+        cursor: pointer;
+    }
+    input[type="submit"].active {
+        cursor: default;
+    }
+    
+
+
+    /*FOOTER*/
+    footer div {
+        width: 25%;
+    }
+
+    #social li a{
+        width: 40px;
+        height: 40px;
+    }
+
+    /*PAGINE DI ERRORE*/
+    #errorListOption{
+        flex-direction: row;
+    }
+    #errorListOption li {
+        align-self: inherit;
+        width: 50%;
+    }
+}
+@media only screen and (min-width: 748px) {
+    /*HEADER*/
+    header #menu {
+        border-top: none;
+    }
+    header #apriMenu {
+        display: none;
+    }
+
+    header #menu {
+        align-self: center;
+        width: 65%;
+        display: block;
+    }
+
+    header #menu ul {
+        display: flex;
+        justify-content: end;
+        list-style: none;
+    }
+
+    header #menu ul li.current {
+        border-left: 1px solid black;
+        border-right: 1px solid black;
+    }
+
+    /*IL CENTRO*/
+    ul#listaPersonale {
+        flex-direction: row;
+    }
+    ul#listaPersonale li {
+        max-width: 300px;
+        margin: 1em;
+    }
+
+    #indietroAR a{
+        width: 20%;
+        margin-left: 0;
+    }
+
+}
+@media only screen and (min-width: 1024px) {
+    header #menu {
+        width: 50%;
+    }
+    main.AR {
+        color: var(--TxtColor);
+        max-width: 100%;
+        margin: 0;
+    }
+    section.active {
+        margin-left: 24%;
+        margin-right: 4%;
+        width: initial;
+    }
+    .messaggioAR {
+        position: absolute;
+        top: 10%;
+        right: 5%;
+        width: initial;
+    }
+    #menuScheda, #menuAR {
+        width: 20%;
+        bottom: initial;
+        margin-top: 0.5em;
+    }
+
+    #menuScheda ul, #menuAR ul {
+        display: block;
+        border-top: none;
+    }
+
+    #menuScheda ul li a, #menuAR ul li a {
+        text-decoration: none;
+        color: var(--MenuArTextColor);
+        align-content: center;
+    }
+    #menuScheda ul li button, #menuScheda ul li a, #menuAR ul li button {
+        display: block;
+        background-position: 5%;
+        background-size: 15%;
+        text-indent: 2em;
+        width: 100%;
+        height: 100%;
+        font-size: 1em;
+    }
+    #menuScheda ul li:not(:last-child) {
+        border-bottom: none;
+    }
+    main.AR ~ footer p#rights{
+        margin-bottom: 0px;
+    }
+
+
+}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <title>Editor scheda - UniFit</title>
+        <meta name="keywords" content="UniFit, palestra, area riservata, schede di allenamento, esercizi, periodo, aggiungi esercizio, rimuovi esercizio, elimina">
+        <meta name="description" content="Editor schede di allenamento UniFit.">
+        <meta name="author" content="Manuel Cinnirella, Francesco Furno, Davide Seresin">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="img/icon.ico">
+        <link rel="stylesheet" href="css/style-min.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+        <script defer src="js/script-min.js"></script>
+    </head>
+    <body>
+        <nav aria-label="Aiuti alla navgiazione">
+            <a class="navigationhelp" href="#content" tabindex="0">Vai al contenuto</a>
+        </nav>
+        <header>
+            <h1 id="logo">UniFit</h1>
+            <button id="apriMenu">Menu</button>
+        <!--menu-->
+        <nav id="menu" class="nascosto" aria-label="Menù di navigazione">
+            <ul>
+                <li><a href="index.php"><span lang="en">Home</span></a></li>
+                <li><a href="centro.php">Il centro</a></li>
+                <li><a href="attivita.php">Attività</a></li>
+                <li><a href="admin.php">Area riservata</a></li>
+                <li><a href="logout.php">Logout</a></li>
+            </ul>
+        </nav>
+        </header>
+        
+        <!--breadcrumb-->
+        <nav id="breadcrumb"  aria-label="Percorso di navigazione">
+            <p>Ti trovi in: <a href = "admin.php">Area riservata</a> &gt;&gt; Scheda n.{idScheda} di {nomeAtleta}</p>
+        </nav>
+
+        <!--Menu area riservata-->
+        <nav id="indietroAR"  aria-label="Link per tornare all'area riservata">
+            <a href="admin.php#" id="indietro">Torna indietro</a>
+        </nav>
+
+        <main id="content"  class="AR">
+            <nav id="menuScheda" class="admin" aria-label="Menù di gestione scheda">
+                <ul>
+                    <li><button id="visualizzaBtn">Visualizza scheda</button></li>
+                    <li><button id="modificaPerBtn" name="modificaPerBtn">Modifica periodo</button></li>
+                    <li><button id="modificaEsBtn" name="modificaEsBtn">Modifica esercizi</button></li>
+                    <li><button id="aggiungiEsBtn" name="aggiungiEsBtn">Aggiungi esercizi</button></li>
+                    <li><button id="rimuoviEsBtn" name="rimuoviEsBtn">Rimuovi esercizi</button></li>
+                    <li><button id="eliminaSchedaBtn" name="eliminaSchedaBtn">Elimina scheda</button></li>
+                </ul>
+            </nav>
+            <section id="schedaWin" class="active">
+                <h2>Visualizza scheda di allenamento</h2>
+                {messaggioModifica}
+                <table aria-describedby="descr" id = "scheda">
+                    <caption>Scheda di allenamento di {nomeAtleta} valida dal 
+                        <time datetime="{inizio}">{inizio}</time> al 
+                        <time datetime="{fine}">{fine}</time>
+                    </caption>
+                    <thead>
+                        <tr>
+                            <th scope = "col">Numero</th>
+                            <th scope = "col">Esercizio</th>
+                            <th scope = "col">Immagine</th>
+                            <th scope = "col">Ripetizioni</th>
+                            <th scope = "col">Recupero</th>
+                            <th scope = "col">Note</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {scheda}
+                    </tbody>
+                </table>
+                <p id="descr">la tabella contiene l'elenco degli esercizi della scheda di allenamento selezionata.
+                    Ogni riga descrive un esercizio con nome, immagine, ripetizioni, recupero e note.
+                </p>
+            </section>
+            <section id ="modificaPeriodoWin" class="active">
+                <h2>Modifica periodo</h2>
+                <form method="post" action="schedaAdmin.php?ids={idScheda}" id="formPeriodo">
+                    <fieldset>
+                        <legend>Periodo</legend>
+                        <label for="inizioS">Inizio:</label>
+                        <input type="date" name="inizioS" id="inizioS" value="{inizio}">
+                        <label for="fineS">Fine:</label>
+                        <input type="date" name="fineS" id="fineS" value="{fine}">
+                        <input type="submit" id="editPeriodo" name="editPeriodo" value="Modifica periodo">
+                    </fieldset>
+                </form>
+            </section>
+            <section id ="modificaEserciziWin" class="active">
+
+                <h2>Modifica esercizi</h2>
+                <p class="descrMenu">Puoi modificare ogni esercizio della scheda.</p>
+                <a id = "to-creaSchedaBtn" href = "#edit">Vai al pulsante modifica scheda</a>
+                {form}
+            </section>
+            <section id="aggiungiEserciziWin" class="active">
+                <h2>Aggiungi esercizi</h2>
+                <form method="post" action="schedaAdmin.php?ids={idScheda}" id="formAggiungiEsercizio">
+                    <fieldset>
+                        <legend>Nuovo esercizio</legend>
+                        <label for="new_esercizio">Tipo</label>
+                        <select name="new_esercizio" id="new_esercizio">
+                            <option value="">---Seleziona un esercizio</option>
+                            {esercizi}
+                        </select>
+                        <label for="new_ripetizioni">Ripetizioni:</label>
+                        <textarea form = "formAggiungiEsercizio" id="new_ripetizioni" name="new_ripetizioni"></textarea>
+                        <label for="new_recupero">Recupero:</label>
+                        <textarea form = "formAggiungiEsercizio" id="new_recupero" name="new_recupero"></textarea>
+                        <label for="new_note">Note:</label>
+                        <textarea form = "formAggiungiEsercizio" id="new_note" name="new_note"></textarea>
+                        <input type="submit" name="add" id="add" value="Conferma">
+                        </fieldset>
+                    </form>
+            </section>
+            <section id="rimuoviEserciziWin" class="active" id="rimuoviForm">
+                <h2>Rimuovi esercizi</h2>
+                <p class="descrMenu">Rimuovi un esercizio dalla scheda</p>
+                <form method="post" action="schedaAdmin.php?ids={idScheda}" id="rimuoviEsercizioForm">
+                    <fieldset>
+                        <legend>Esercizio da rimuovere</legend>
+                        <label for="del_esercizio">Rimuovi esercizio</label>
+                        <select name="del_esercizio" id="del_esercizio">
+                            <option value="">---Seleziona un esercizio</option>
+                            {nEsercizi}
+                        </select>
+                        <input type="submit" name="rimuoviE" id="rimuoviE" value="Conferma">
+                    </fieldset>
+                </form>
+            </section>
+            <section id="eliminaSchedaWin" class="active">
+                <h2>Elimina scheda</h2>
+                <p class="descrMenu">Stai per eliminare la scheda.</p>
+                <form method="post" action="schedaAdmin.php?ids={idScheda}" id="eliminaForm">
+                    <input type="submit" name="eliminaScheda" id="eliminaScheda" value="Conferma">
+                </form>
+            </section>
+            <a id = "back-to-top" href = "#">Torna al contenuto</a>
+        </main>
+        
+        <!--{footer}-->
+    </body>
+</html>

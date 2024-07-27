@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="it">
+    <!--head-->
+    <head>
+        <meta charset="UTF-8">
+        <title>Il centro - UniFit</title>
+        <meta name="keywords" content="UniFit, palestra, centro sportivo, Torre di Archimede, Manuel Cinnirella, Francesco Furno, Davide Seresin, istruttori, insegnanti, Padova, Università">
+        <meta name="description" content="Scopri il centro UniFit, situato all'ultimo piano della Torre di Archimede a Padova. Vieni a conoscere i nostri istruttori!">
+        <meta name="author" content="Manuel Cinnirella, Francesco Furno, Davide Seresin">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="img/icon.ico">
+        <link rel="stylesheet" href="css/style-min.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+        <script defer src="js/script-min.js"></script>
+    </head>
+    <body>
+        <nav aria-label="Aiuti alla navgiazione">
+            <a class="navigationhelp" href="#content" tabindex="0">Vai al contenuto</a>
+        </nav>
+        <header>
+            <h1 id="logo">UniFit</h1>
+            <button id="apriMenu">Menu</button>
+            <nav id="menu" class="nascosto" aria-label="Menù di navigazione">
+                <ul>
+                    <li><a href="index.php"><span lang="en">Home</span></a></li>
+                    <li class="current">Il centro</li>
+                    <li><a href="attivita.php">Attività</a></li>
+                    <li><a href="login.php">Area riservata</a></li>
+                    <!--logout-->
+                </ul>
+            </nav>
+        </header>
+    
+        <nav id="breadcrumb" aria-label="Percorso di navigazione">
+            <p>Ti trovi in: <a href="index.php"><span lang="en">Home</span></a> &gt;&gt; Il centro</p>
+        </nav>
+
+        <main id="content">
+            <h2>Il Centro</h2>
+            <p> UniFit è il centro <span lang="en">fitness</span> situato all'ultimo piano della maestosa Torre di Archimede a Padova.
+                Al suo interno, troverai una sala <span lang="en">fitness</span> completamente attrezzata, ideale per un allenamento 
+                completo e efficace. Potrai anche usufruire di una sala dedicata allo yoga, dove potrai praticare 
+                movimenti fluidi e rilassanti per migliorare la flessibilità e ridurre lo <span lang="en">stress</span>, e di una sala dedicata 
+                al <span lang="en">pilates</span>, che offre la possibilità di lavorare sulla forza e la stabilità del <span lang="en">core</span> attraverso esercizi 
+                mirati e consapevoli.
+            </p>
+            <picture>
+                <source srcset="img/torre-min.webp" media="(max-width: 600px)" type="image/webp">
+                <source srcset="img/torre-min.png" media="(max-width: 600px)">
+                <source srcset="img/torre.webp" media="(min-width: 601px)" type="image/webp">
+                <img class="imgCentro" src = "img/torre.png" alt = "La Torre di Archimede dall'esterno.">
+            </picture>
+
+            <h3>La sala <span lang="en">fitness</span></h3>
+            <p>La sala <span lang="en">fitness</span> è dotata di attrezzature moderne e all'avanguardia, progettate per adattarsi a diverse esigenze
+                di allenamento. Dalle zone di pesistica ai macchinari cardio, ogni sezione è pensata per massimizzare
+                l'efficacia del tuo allenamento. Abbiamo una vasta gamma di attrezzature e macchinari per il sollevamento pesi e allenamenti a corpo libero.</p>
+                <picture>
+                    <source srcset="img/PalestraCentro-min.webp" media="(max-width: 600px)" type="image/webp">
+                    <source srcset="img/PalestraCentro-min.png" media="(max-width: 600px)">
+                    <source srcset="img/PalestraCentro.webp" media="(min-width: 601px)" type="image/webp">
+                    <img class="imgCentro" src = "img/PalestraCentro.png" alt = "La sala ftiness del centro.">
+                </picture>
+                <h3>Le sale di Yoga e <span lang="en">Pilates</span></h3>
+            <p>Le sale di Yoga e <span lang="en">Pilates</span> di UniFit sono spazi tranquilli e ispiranti dedicati alla pratica del benessere mentale e fisico. Arredate con cura per 
+                creare un'atmosfera rilassante e accogliente, queste sale offrono un rifugio dallo <span lang="en">stress</span> quotidiano dell'università. Attrezzate con materassini, 
+                cuscini e accessori essenziali, le sale di Yoga e <span lang="en">Pilates</span> sono ideali per praticare movimenti fluidi, esercizi di respirazione e meditazione.</p>
+                <picture>
+                    <source srcset="img/YogaCentro-min.webp" media="(max-width: 600px)" type="image/webp">
+                    <source srcset="img/YogaCentro-min.png" media="(max-width: 600px)">
+                    <source srcset="img/YogaCentro.webp" media="(min-width: 601px)" type="image/webp">
+                    <img class="imgCentro" src = "img/YogaCentro.png" alt = "La sala del centro dedicata allo yoga.">
+                </picture>
+                <h3>I Nostri istruttori</h3>
+            <ul id = "listaPersonale">
+                <li id="Cinnirella">
+                    <h4 class ="nomeIstruttore">Cinnirella Manuel</h4>
+                    <picture>
+                        <source srcset="img/Cinnirella-pic.webp" type="image/webp">
+                        <img src = "img/Cinnirella-pic.png" alt = "Manuel che mostra i muscoli durante la palestra.">
+                    </picture>
+                    <p lang = "en" class="ruoloIstruttore">Personal Trainer</p>
+                    <p class="descIstruttore"> Con oltre dieci anni di esperienza nel settore del <span lang="en">fitness</span>, Manuel si 
+                        impegna a guidare i suoi atleti verso il raggiungimento dei loro obiettivi di salute e forma 
+                        fisica attraverso programmi personalizzati e motivanti.</p>
+                </li>
+                <li id="Furno">
+                        <h4 class ="nomeIstruttore">Furno Francesco</h4>
+                        <picture>
+                            <source srcset="img/Furno-pic.webp" type="image/webp">
+                            <img src = "img/Furno-pic.png" alt = "Francesco che mostra gli addominali scolpiti.">
+                        </picture>
+                        <p class="ruoloIstruttore">Insegnate di Yoga e <span lang="en">Pilates</span></p>
+                        <p class="descIstruttore">Francesco è un insegnante certificato di yoga e <span lang="en">pilates</span> con una passione 
+                            per il movimento consapevole e l'equilibrio del corpo e della mente. Con anni di esperienza, 
+                            guida i suoi studenti attraverso pratiche che migliorano la flessibilità, la forza e la serenità interiore.</p>
+                </li>
+                <li id="Seresin">
+                    <h4 class ="nomeIstruttore">Seresin Davide</h4>
+                    <picture>
+                        <source srcset="img/Seresin-pic.webp" type="image/webp">
+                        <img src = "img/Seresin-pic.png" alt = "Davide con sguardo serio a petto nudo.">
+                    </picture>
+                    <p lang = "en" class="ruoloIstruttore">Personal Trainer</p>
+                    <p class="descIstruttore"> Davide ha un <span lang="en">background</span> atletico e una forte esperienza nell'allenamento 
+                        funzionale e nel <span lang="en">calisthenics</span>. Con la sua energia contagiosa e la sua conoscenza tecnica, 
+                        aiuta i suoi clienti a superare i propri limiti e a raggiungere risultati sorprendenti.</p>
+                </li>
+            </ul>
+            <a id = "back-to-top" href = "#">Torna al contenuto</a>
+        </main>
+
+        <!--footer-->
+        {footer}
+    </body>
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <title>Area riservata amministratore - UniFit</title>
+        <meta name="keywords" content="UniFit, palestra, area riservata, piani di allenamento, dati personali, clienti">
+        <meta name="description" content="Crea piani di allenamento e gestisci i clienti della palestra UniFit.">
+        <meta name="author" content="Manuel Cinnirella, Francesco Furno, Davide Seresin">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="img/icon.ico">
+        <link rel="stylesheet" href="css/style-min.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+        <script defer src="js/script-min.js"></script>
+        
+    </head>
+    <body>
+        <nav aria-label="Aiuti alla navgiazione">
+            <a class="navigationhelp" href="#content" tabindex="0">Vai al contenuto</a>
+        </nav>
+        <header>
+            <h1 id="logo">UniFit</h1>
+            <button id="apriMenu">Menu</button>
+        <!--menu-->
+        <nav id="menu" class="nascosto" aria-label="Menù di navigazione">
+            <ul>
+                <li><a href="index.php"><span lang="en">Home</span></a></li>
+                <li><a href="centro.php">Il centro</a></li>
+                <li><a href="attivita.php">Attività</a></li>
+                <li class="current">Area riservata</li>
+                <li><a href="logout.php" lang="en">Logout</a></li>
+            </ul>
+        </nav>
+        </header>
+        
+        <!--breadcrumb-->
+        <nav id="breadcrumb" aria-label="Percorso di navigazione">
+            <p>Ti trovi in: <a href="index.php"><span lang="en">Home</span></a> &gt;&gt; Area riservata</p>
+        </nav>
+        
+        <!--Menu area riservata-->
+        <!--{avvisoAdmin}-->
+        <main id="content" class="AR">
+            <nav id = "menuAR" class="admin" aria-label="Menù area riservata">
+                <ul>
+                    <li><button id="creaLink">Nuova scheda</button></li>
+                    <li><button id="schedeLink" class="current"><span lang="en">Editor</span> schede</button></li>
+                    <li><button id="utentiLink">Gestisci utenti</button></li>
+                </ul>
+            </nav>
+            <section class="active" id="creaSchedaWin">
+                <h2>Crea scheda di allenamento</h2>
+                <p>È necessario inserire almeno un esercizio all'interno della scheda.</p>
+                <ul id="IndicazioniForm">
+                    <li><span class="campoIndicazioniForm">Ripetizioni  e Recupero:</span> campi obbligatori; consentiti da 3 a 50 caratteri alfanumerici e simboli - () . ; , * ×</li>
+                    <li><span class="campoIndicazioniForm">Note:</span>campo opzionale; consentiti fino a 500 caratteri</li>
+                </ul>
+                {messaggioCreazione}
+                <a id = "to-creaSchedaBtn" href = "#creaSchedaBtn">Vai al pulsante crea scheda</a>
+                <form method="post" action="admin.php" id="creaSchedaForm">
+                    <fieldset id="intestazione">
+                        <legend>Intestazione scheda</legend>
+                        <label for="Atleta">Atleta: </label>
+                        <select name="Atleta" id="Atleta" >
+                            <option value="" >-- Seleziona un atleta</option>
+                            {atleti}
+                        </select>
+                        <label for="dataDiInizio">Data di inizio:</label>
+                        <input type="date" id="dataDiInizio" name="inizio" >
+                        <label for="dataDiFine">Data di fine:</label>
+                        <input type="date" id="dataDiFine" name="fine" >
+                    </fieldset>
+                    <fieldset class="fieldsetEsercizio">
+                        <legend>Esercizio 1</legend>
+                        <label for="esercizio1">Esercizio:</label>
+                        <select name="esercizio1" id="esercizio1" class="nomeEsercizio" required>
+                            <option value="" selected>-- Seleziona un esercizio</option>
+                            {esercizi}
+                        </select>
+                        <label for="ripetizioni1">Ripetizioni:</label>
+                        <textarea name="ripetizioni1" id="ripetizioni1" class="ripetizioniEsercizio" required></textarea>
+                        <label for="recupero1">Recupero:</label>
+                        <textarea name="recupero1" id="recupero1" class="recuperoEsercizio" required></textarea>
+                        <label for="note1">Note:</label>
+                        <textarea name="note1" id="note1" class="noteEsercizio"></textarea>
+                    </fieldset>
+                    <fieldset class="fieldsetEsercizio">
+                        <legend>Esercizio 2</legend>
+                        <label for="esercizio2">Esercizio:</label>
+                        <select name="esercizio2" id="esercizio2" class="nomeEsercizio">
+                            <option value="" selected>-- Seleziona un esercizio</option>
+                            {esercizi}
+                        </select>
+                        <label for="ripetizioni2">Ripetizioni:</label>
+                        <textarea name="ripetizioni2" id="ripetizioni2" class="ripetizioniEsercizio" ></textarea>
+                        <label for="recupero2">Recupero:</label>
+                        <textarea name="recupero2" id="recupero2" class="recuperoEsercizio"></textarea>
+                        <label for="note2">Note:</label>
+                        <textarea name="note2" id="note2" class="noteEsercizio"></textarea>
+                    </fieldset>
+                    <fieldset class="fieldsetEsercizio">
+                        <legend>Esercizio 3</legend>
+                        <label for="esercizio3">Esercizio:</label>
+                        <select name="esercizio3" id="esercizio3" class="nomeEsercizio">
+                            <option value="" selected>-- Seleziona un esercizio</option>
+                            {esercizi}
+                        </select>
+                        <label for="ripetizioni3">Ripetizioni:</label>
+                        <textarea name="ripetizioni3" id="ripetizioni3" class="ripetizioniEsercizio" ></textarea>
+                        <label for="recupero3">Recupero:</label>
+                        <textarea name="recupero3" id="recupero3" class="recuperoEsercizio"></textarea>
+                        <label for="note3">Note:</label>
+                        <textarea name="note3" id="note3" class="noteEsercizio"></textarea>
+                    </fieldset>
+                    <fieldset class="fieldsetEsercizio">
+                        <legend>Esercizio 4</legend>
+                        <label for="esercizio4">Esercizio:</label>
+                        <select name="esercizio4" id="esercizio4" class="nomeEsercizio" >
+                            <option value="" selected>-- Seleziona un esercizio</option>
+                            {esercizi}
+                        </select>
+                        <label for="ripetizioni4">Ripetizioni:</label>
+                        <textarea name="ripetizioni4" id="ripetizioni4" class="ripetizioniEsercizio" ></textarea>
+                        <label for="recupero4">Recupero:</label>
+                        <textarea name="recupero4" id="recupero4" class="recuperoEsercizio"></textarea>
+                        <label for="note4">Note:</label>
+                        <textarea name="note4" id="note4" class="noteEsercizio"></textarea>
+                    </fieldset>
+                    <fieldset class="fieldsetEsercizio">
+                        <legend>Esercizio 5</legend>
+                        <label for="esercizio5">Esercizio:</label>
+                        <select name="esercizio5" id="esercizio5" class="nomeEsercizio">
+                            <option value="" selected>-- Seleziona un esercizio</option>
+                            {esercizi}
+                        </select>
+                        <label for="ripetizioni5">Ripetizioni:</label>
+                        <textarea name="ripetizioni5" id="ripetizioni5" class="ripetizioniEsercizio" ></textarea>
+                        <label for="recupero5">Recupero:</label>
+                        <textarea name="recupero5" id="recupero5" class="recuperoEsercizio"></textarea>
+                        <label for="note5">Note:</label>
+                        <textarea name="note5" id="note5" class="noteEsercizio"></textarea>
+                    </fieldset>
+                    <fieldset class="fieldsetEsercizio">
+                        <legend>Esercizio 6</legend>
+                        <label for="esercizio6">Esercizio:</label>
+                        <select name="esercizio6" id="esercizio6" class="nomeEsercizio">
+                            <option value="" selected>-- Seleziona un esercizio</option>
+                            {esercizi}
+                        </select>
+                        <label for="ripetizioni6">Ripetizioni:</label>
+                        <textarea name="ripetizioni6" id="ripetizioni6" class="ripetizioniEsercizio" ></textarea>
+                        <label for="recupero6">Recupero:</label>
+                        <textarea name="recupero6" id="recupero6" class="recuperoEsercizio"></textarea>
+                        <label for="note6">Note:</label>
+                        <textarea name="note6" id="note6" class="noteEsercizio"></textarea>
+                    </fieldset>
+                    <fieldset class="fieldsetEsercizio">
+                        <legend>Esercizio 7</legend>
+                        <label for="esercizio7">Esercizio:</label>
+                        <select name="esercizio7" id="esercizio7" class="nomeEsercizio">
+                            <option value="" selected>-- Seleziona un esercizio</option>
+                            {esercizi}
+                        </select>
+                        <label for="ripetizioni7">Ripetizioni:</label>
+                        <textarea name="ripetizioni7" id="ripetizioni7" class="ripetizioniEsercizio" ></textarea>
+                        <label for="recupero7">Recupero:</label>
+                        <textarea name="recupero7" id="recupero7" class="recuperoEsercizio"></textarea>
+                        <label for="note7">Note:</label>
+                        <textarea name="note7" id="note7" class="noteEsercizio"></textarea>
+                    </fieldset>
+                    <fieldset class="fieldsetEsercizio">
+                        <legend>Esercizio 8</legend>
+                        <label for="esercizio8">Esercizio:</label>
+                        <select name="esercizio8" id="esercizio8" class="nomeEsercizio">
+                            <option value="" selected>-- Seleziona un esercizio</option>
+                            {esercizi}
+                        </select>
+                        <label for="ripetizioni8">Ripetizioni:</label>
+                        <textarea name="ripetizioni8" id="ripetizioni8" class="ripetizioniEsercizio" ></textarea>
+                        <label for="recupero8">Recupero:</label>
+                        <textarea name="recupero8" id="recupero8" class="recuperoEsercizio"></textarea>
+                        <label for="note8">Note:</label>
+                        <textarea name="note8" id="note8" class="noteEsercizio"></textarea>
+                    </fieldset>
+                    <fieldset class="fieldsetEsercizio">
+                        <legend>Esercizio 9</legend>
+                        <label for="esercizio9">Esercizio:</label>
+                        <select name="esercizio9" id="esercizio9" class="nomeEsercizio">
+                            <option value="" selected>-- Seleziona un esercizio</option>
+                            {esercizi}
+                        </select>
+                        <label for="ripetizioni9">Ripetizioni:</label>
+                        <textarea name="ripetizioni9" id="ripetizioni9" class="ripetizioniEsercizio"></textarea>
+                        <label for="recupero9">Recupero:</label>
+                        <textarea name="recupero9" id="recupero9" class="recuperoEsercizio"></textarea>
+                        <label for="note9">Note:</label>
+                        <textarea name="note9" id="note9" class="noteEsercizio"></textarea>
+                    </fieldset>
+                    <fieldset class="fieldsetEsercizio">
+                        <legend>Esercizio 10</legend>
+                        <label for="esercizio10">Esercizio:</label>
+                        <select name="esercizio10" id="esercizio10" class="nomeEsercizio">
+                            <option value="" selected>-- Seleziona un esercizio</option>
+                            {esercizi}
+                        </select>
+                        <label for="ripetizioni10">Ripetizioni:</label>
+                        <textarea name="ripetizioni10" id="ripetizioni10" class="ripetizioniEsercizio"></textarea>
+                        <label for="recupero10">Recupero:</label>
+                        <textarea name="recupero10" id="recupero10" class="recuperoEsercizio"></textarea>
+                        <label for="note10">Note:</label>
+                        <textarea name="note10" id="note10" class="noteEsercizio"></textarea>
+                    </fieldset>
+                    <input type="submit" name="creaSchedaBtn" id="creaSchedaBtn" value="Crea scheda">
+                </form>
+
+            </section>
+            <section class="active" id="searchSchedeWin">
+                <h2>Visualizza scheda di allenamento</h2>
+                <form method="post" action="admin.php#searchSchedeWin" id="searchForm">
+                    <fieldset>
+                        <legend>Ricerca per atleta</legend>
+                        <label for="nomeAtleta">Scheda del cliente: </label>
+                        <select name="nomeAtleta" id="nomeAtleta">
+                            {atleti}
+                        </select>
+                    </fieldset>
+                    <input type="submit" name="cercaSchedaBtn" id="cercaSchedaBtn" value="Cerca schede">
+                </form>
+                <!--{schedeValide}-->
+                <!--{schedeScadute}-->
+            </section>
+            <section class="active" id="gestioneUtentiWin">
+                <h2>Elimina Atleta</h2>
+                <p class="descrMenu">Attenzione: eliminando un atleta eliminerai anche tutte le schede a lui intestate.</p>
+                <form method="post" action="admin.php" id="eliminaUtenteForm">
+                    <fieldset>
+                        <legend>Rimuovi utente</legend>
+                        <label for="nomeCliente">Seleziona un utente:</label>
+                        <select name="listaUtenti" id="nomeCliente">
+                            {atleti}
+                        </select>
+                    </fieldset>
+                    <input type="submit" value="Conferma" name="eliminaUtente" id="eliminaUtente">
+                </form>
+            </section>
+            <a id = "back-to-top" href = "#">Torna al contenuto</a>
+        </main>
+    </body>
+</html>

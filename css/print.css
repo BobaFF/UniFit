@@ -1,0 +1,178 @@
+:root {
+    --Font: 'Times New Roman', serif;
+    --TextSize: 12pt;
+    --TextColor: black;
+    --LinkColor: #0000B8;
+    --VisitedLinkColor: #691616;
+}
+
+html {
+    font-size: var(--TextSize);
+    background-image: none;
+}
+
+header {
+    text-align: left;
+    border: 0px;
+}
+
+header #logo {
+    text-indent: 0%;
+    background-image: none;
+    background-size: inherit;
+    width: 2cm;
+    margin-left: 0px;
+    text-transform: uppercase;
+    content: url("../img/navigazione/Logo.png");
+    filter: invert(100%);
+}
+
+.navigationhelp, #apriMenu, #menu,
+header nav, main #back-to-top, img, .messaggioAR, #indietroAR, #menuScheda, #menuAR, #errorListOption {
+    display: none;
+}
+
+#breadcrumb {
+    display: block;
+    border: 0px;
+}
+
+main .imgHomePage {
+    max-height: 3cm;
+}
+main #orario {
+    width: 50%;
+}
+main #orario th {
+    font-weight: normal;
+}
+main .attività > dt {
+    border: none;
+}
+main .attività > dd {
+    border: none;
+}
+
+main .attività > dd img {
+    width: 40%;
+}
+
+main.AR section {
+    margin-bottom: 0px;
+}
+
+dl#infoUser dd{
+    border: 0px;
+}
+
+ul.listaSchede li a {
+    border: 0px;
+    padding: 0em;
+}
+#IndicazioniForm .campoIndicazioniForm {
+    font-weight: normal;
+}
+
+#scheda caption {
+    padding: 0.5em;
+}
+
+/*-Scheda di allenamento*/
+#scheda thead {
+    display: table-row-group;
+}
+#scheda tr {
+    display: table-row;
+}
+#scheda thead th {
+    font-weight: bold;
+    color: var(--TextColor);
+}
+#scheda th, #scheda td {
+    display: table-cell;
+}
+
+#scheda tr td:first-of-type {
+    font-weight: normal;
+    background-color: inherit;
+    color: inherit;
+}
+
+#scheda tr th:first-of-type {
+    width: 5%;
+}
+
+#scheda td, #scheda th {
+    width: 16%;
+}
+
+#scheda tr td:nth-child(3) {
+    width: 20%;
+}
+
+#scheda tr td:last-of-type {
+    width:25%;
+}
+
+#scheda tr td[data-title]:before {
+    content: none;
+    font-weight: bold;
+}
+
+#scheda img {
+    display: block;
+}
+
+/*FORM*/
+legend, fieldset{
+    border: 0px;
+}
+textarea {
+    height: 40px;
+    width: 400px;
+}
+
+textarea:empty {
+    height: 20px;
+    width: 200px;
+}
+
+input, select, input[type="submit"], input[type="email"] {
+    width: 200px;
+}
+
+input[type="submit"] {
+    font-size: var(--TextSize);
+    border: 1px solid black;
+    font-weight: normal;
+}
+
+span.errorForm {
+    color: var(--TextColor);
+    font-weight: bold;
+}
+
+/*FOOTER*/
+
+footer {
+    border: 0px;
+}
+
+footer div {
+    width: 25%;
+}
+
+
+#social li a {
+    text-indent: 0%;
+    background-image: none;
+    filter: none;
+    width: auto;
+    height: auto;
+}
+
+main.AR ~ footer p#rights{
+    margin-bottom: 0px;
+}
+/*PAGINE DI ERRORE*/
+
